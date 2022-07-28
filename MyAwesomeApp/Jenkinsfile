@@ -21,7 +21,7 @@ node {
         
     stage ('Docker Build') {
          // Build and push image with Jenkins' docker-plugin
-        withDockerServer([uri: "tcp://docker"]) {
+        withDockerServer([uri: "tcp://docker.io"]) {
 
             withDockerRegistry([credentialsId: "dockerhub", url: "https://index.docker.io/v1/"]) {
             image = docker.build("pankajpatre11/mywebapp", "MyAwesomeApp")
