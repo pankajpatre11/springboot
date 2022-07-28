@@ -11,11 +11,12 @@ node {
     
     
     stage ('Build') {
-            sh 'mvn -f MyAwesomeApp/pom.xml clean install'            
+            sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
+            sh 'pwd' 
         }
         
     stage ('archive') {
-            archiveArtifacts '**/*.jar'
+            archiveArtifacts '**/*.jar'             
         }
         
     stage ('Docker Build') {
